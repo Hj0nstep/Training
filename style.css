@@ -1,0 +1,249 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6; /*Espaçamento entre as linhas do texto, facilita a leitura*/
+    padding: 30px 10px; /* Aqui estou mexendo na altura e no espaçamento na lateral */
+    background-color: #bdb76b; 
+    color: #333;
+}
+
+
+header {
+    color: #552233;
+    padding: 5px 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.2); /* Adiciona uma sombra suave abaixo do cabeçalho para dar um efeito 3D. */
+    margin-bottom: 20px; /* Adiciona uma margem na parte de baixo para separar do conteúdo principal. */
+    text-align: center;
+
+}
+
+
+.titulo {
+    display: flexbox;
+    margin-bottom: 20px;
+}
+
+
+.perfil_foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 12%;
+    overflow: hidden;
+    /* margin-right: 20px; */ 
+    border: 3px solid #523;
+    flex-shrink: 0; /* Impede que a foto encolha se não houver espaço */
+}
+
+
+.perfil_foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir o espaço da div, cortando o excesso, mas mantendo a proporção */
+}
+
+
+header h1 {
+    font-size: 3.5em;
+    margin:0;
+    line-height: 1.2; /* Altura de linha mais ajustada ao tamanho da fonte */
+}
+
+
+
+
+.botao-mostrar-contatos {
+    background-color: #552233;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+.botao-mostrar-contatos:hover {
+    background-color: #3d1824;
+}
+
+.botao-mostrar-contatos i {
+    margin-left: 5px;
+}
+
+.escondido {
+    display: none !important;
+}
+
+
+.botoes-contato {
+    display: flex;          /* Alinha os botões lado a lado */
+    justify-content: center;/* Centraliza o grupo de botões */
+    flex-wrap: wrap;        /* Permite que os botões quebrem para a linha de baixo se não couberem */
+    gap: 2px;              /* Espaçamento entre os botões (substitui a margem individual para melhor controle com flex) */
+}
+
+
+.botao-contato {
+    display: inline-flex;    /* Para alinhar ícone e texto dentro do botão */
+    align-items: center;     /* Alinha verticalmente o ícone e o texto */
+    padding: 10px 18px;      /* Espaçamento interno */
+    font-size: 0.95em;       /* Tamanho da fonte */
+    font-weight: bold;       /* Peso da fonte */
+    color: #ffffff;          /* Cor do texto */
+    text-decoration: none;   /* Sem sublinhado */
+    border-radius: 6px;      /* Bordas arredondadas */
+    border: 1px solid transparent; /* Borda base (cor virá da classe específica) */
+    margin: 5px 0;           /* Margem (principalmente vertical se 'gap' cuida do horizontal) */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeitos de transição */
+
+}
+
+.botao-contato i {
+    margin-right: 8px;
+}
+
+
+.botao-contato:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.15);
+}
+
+
+.botao-linkedin {
+    background-color: #0077b5;
+    border-color: #0077b5;
+}
+
+
+.botao-linkedin:hover {
+    background-color: #005582;
+}
+
+
+.botao-github {
+    background-color: #24292e;
+    border-color: #24292e;
+}
+
+
+.botao-github:hover {
+    background-color: #333a42;
+}
+
+
+.botao-whatsapp {
+    background-color: #25d366;
+    border-color: #25D366;
+}
+
+
+.botao-whatsapp:hover {
+    background-color: #1DAA50;
+}
+
+
+.botao-email {
+    background-color: #D44638;
+    border-color: #D44638;
+}
+
+
+.botao-email:hover {
+    background-color: #b3382b;
+}
+
+
+main {
+    padding: 12px;
+    background-image: url('/foto/Imagem\ do\ WhatsApp\ de\ 2024-10-07\ à\(s\)\ 22.10.56_e5d14338.jpg');
+    background-size: cover; /* Faz a imagem cobrir toda a área do main, mantendo a proporção */
+    background-position:  center center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* Opcional: cria um efeito parallax quando você rola a página. */
+    position: relative; /* Necessário se for usar um overlay com pseudo-elemento */
+    z-index: 1;   /* Necessário se for usar um overlay com pseudo-elemento */
+}
+
+
+main::before {
+    content: "";
+    position: absolute; /* Obrigatório para pseudo-elementos, mesmo que vazio */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.5);
+    z-index: -1; /* Coloca o overlay atrás do conteúdo do main, mas na frente da imagem de fundo original do main (se o             main não tivesse z-index: 1, isso poderia cobrir o background-image do próprio main) */
+                 /* Para garantir que fique entre o texto e a imagem de fundo do main, é mais seguro colocar a imagem de fundo no ::before e o overlay no main, ou ambos no ::before e ::after. */
+}
+
+
+section {
+    margin-bottom: 30px;
+    padding: 0 15px;
+    background-color: #fff; /*Fundo branco para cada seção*/
+    border-left: 5px solid #bdb76b;
+}
+
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 12px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee;
+}
+
+
+article {
+    margin-bottom: 20px;
+}
+
+
+article h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+article p {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+
+section ul {
+    list-style: square;/* Muda o marcador da lista para um quadradinho, por exemplo */
+    padding-left: 20px;
+}
+
+
+section li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #333;
+    color: #f4f4f4;
+    font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+
+
+
